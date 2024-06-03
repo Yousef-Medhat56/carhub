@@ -5,3 +5,8 @@ export interface CustomButtonProps {
   containerStyles?: string;
   handleClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
+
+export interface SearchManufacturerProps{
+  manufacturer:string|null
+  setManufacturer:React.Dispatch<React.SetStateAction<string|null>>
+}
