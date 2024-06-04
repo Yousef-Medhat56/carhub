@@ -1,4 +1,5 @@
 import CarCard from "./CarCard";
+import CarDetails from "./CarDetails";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
@@ -16,4 +17,5 @@ export {
   SearchBar,
   SearchManufacturer,
   CarCard,
+  CarDetails,
 };

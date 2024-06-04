@@ -3,7 +3,7 @@ import { CarProps } from "@/types";
 import { calculateCarRent } from "@/utils";
 import Image from "next/image";
 import React, { use, useState } from "react";
-import { CustomButton } from "@/components";
+import { CarDetails, CustomButton } from "@/components";
 
 interface CarCardProps {
   car: CarProps;
@@ -12,7 +12,7 @@ const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, transmission, drive, year, make, model } = car;
   const carRent = calculateCarRent(city_mpg, year);
 
-  const [isOpen,setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="car-card group">
@@ -63,11 +63,16 @@ const CarCard = ({ car }: CarCardProps) => {
           <CustomButton
             title="View More"
             containerStyles="w-full py-4 rounded-full bg-primary-blue text-white text-[18px] font-bold"
-            handleClick={()=>setIsOpen(true)}
+            handleClick={() => setIsOpen(true)}
             rightIcon="/right-arrow.svg"
           />
         </div>
       </div>
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };
