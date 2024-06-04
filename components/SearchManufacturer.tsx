@@ -48,7 +48,13 @@ const SearchManufacturer = ({
             onChange={(e) => setQuery(e.target.value)}
           ></ComboboxInput>
 
-          <Transition as={Fragment}>
+          <Transition
+            as={Fragment} 
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+            afterLeave={() => setQuery("")}
+          >
             <ComboboxOptions>
               {filteredManufacturers.map((item) => (
                 <ComboboxOption
