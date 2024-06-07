@@ -19,6 +19,8 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
     const searchParams = new URLSearchParams(window.location.search);
 
     searchParams.set(title, value.toLowerCase());
+    
+    searchParams.delete("limit")
 
     const newPathname = `${
       window.location.pathname

@@ -39,6 +39,8 @@ const SearchBar = () => {
     if (manufacturer) searchParams.set("manufacturer", manufacturer);
     else searchParams.delete("manufacturer");
 
+    searchParams.delete("limit")
+    
     const newPathname = `${
       window.location.pathname
     }?${searchParams.toString()}#discover`;
