@@ -32,3 +32,11 @@ export interface CarDetailsProps {
   isOpen: boolean;
   closeModal: () => void;
 }
+
+export interface FetchCarsParams{
+  manufacturer?: string;
+  year?: number;
+  fuel?: string;
+  model?: string;
+  limit?: number;
+}

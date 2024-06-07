@@ -56,7 +56,7 @@ const SearchManufacturer = ({
             afterLeave={() => setQuery("")}
           >
             <ComboboxOptions>
-              {filteredManufacturers.map((item) => (
+              {filteredManufacturers.slice(0,5).map((item) => (
                 <ComboboxOption
                   key={item}
                   value={item}
