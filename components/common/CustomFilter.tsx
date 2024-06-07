@@ -1,15 +1,15 @@
-"use client";
-import { CustomFilterProps } from "@/types";
+'use client';
+import { CustomFilterProps } from '@/types';
 import {
   Listbox,
   Transition,
   ListboxButton,
   ListboxOption,
   ListboxOptions,
-} from "@headlessui/react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React, { useState, Fragment } from "react";
+} from '@headlessui/react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React, { useState, Fragment } from 'react';
 
 const CustomFilter = ({ title, options }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
@@ -19,8 +19,8 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
     const searchParams = new URLSearchParams(window.location.search);
 
     searchParams.set(title, value.toLowerCase());
-    
-    searchParams.delete("limit")
+
+    searchParams.delete('limit');
 
     const newPathname = `${
       window.location.pathname
@@ -34,14 +34,16 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
         value={selected}
         onChange={(e) => {
           setSelected(e);
-          handleUpdateParams(title,e.value)
+          handleUpdateParams(title, e.value);
         }}
       >
         <div className="relative w-fit z-10">
-          <ListboxButton className={"custom-filter__btn"}>
-            <span className="block truncate font-medium">{selected.value||selected.title}</span>
+          <ListboxButton className={'custom-filter__btn'}>
+            <span className="block truncate font-medium">
+              {selected.value || selected.title}
+            </span>
             <Image
-              src={"/chevron-up-down.svg"}
+              src={'/chevron-up-down.svg'}
               width={20}
               height={20}
               className="object-contain ml-4"
@@ -54,13 +56,13 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <ListboxOptions className={"custom-filter__options"}>
+            <ListboxOptions className={'custom-filter__options'}>
               {options.map((option, index) => (
                 <ListboxOption
                   key={index}
                   value={option}
                   className={
-                    "relative cursor-default select-none py-2 px-4 data-[focus]:bg-primary-blue data-[focus]:text-white"
+                    'relative cursor-default select-none py-2 px-4 data-[focus]:bg-primary-blue data-[focus]:text-white'
                   }
                 >
                   <span>{option.title}</span>

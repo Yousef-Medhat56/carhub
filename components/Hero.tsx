@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import { CustomButton } from "@/components";
-import Image from "next/image";
+'use client';
+import React from 'react';
+import { CustomButton } from '@/components';
+import Image from 'next/image';
 
 const Hero = () => {
   const handleClick = () => {};
@@ -16,14 +16,14 @@ const Hero = () => {
           service
         </p>
         <CustomButton
-          title={"Explore Cars"}
+          title={'Explore Cars'}
           containerStyles="bg-primary-blue text-white rounded-full mt-10"
           handleClick={handleClick}
         />
       </div>
       <div className="hero__image-container">
         <div className="hero__image">
-          <Image src={"/hero.png"} alt="hero" fill className="object-contain" />
+          <Image src={'/hero.png'} alt="hero" fill className="object-contain" />
         </div>
         <div className="hero__image-overlay" />
       </div>

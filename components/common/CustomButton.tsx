@@ -1,12 +1,12 @@
-"use client";
-import React from "react";
-import { CustomButtonProps } from "@/types";
-import Image from "next/image";
+'use client';
+import React from 'react';
+import { CustomButtonProps } from '@/types';
+import Image from 'next/image';
 Image;
 
 const CustomButton = ({
   title,
-  type = "button",
+  type = 'button',
   disabled = false,
   containerStyles,
   rightIcon,

@@ -1,19 +1,19 @@
-"use client";
-import { CarDetailsProps } from "@/types";
-import Image from "next/image";
-import React, { Fragment } from "react";
+'use client';
+import { CarDetailsProps } from '@/types';
+import Image from 'next/image';
+import React, { Fragment } from 'react';
 import {
   Dialog,
   DialogPanel,
   Transition,
   TransitionChild,
-} from "@headlessui/react";
+} from '@headlessui/react';
 
 const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className={"relative z-10"} onClose={closeModal}>
+        <Dialog as="div" className={'relative z-10'} onClose={closeModal}>
           <TransitionChild
             as={Fragment}
             enter="ease-out duration-300"
@@ -47,7 +47,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     className="absolute top-2 right-2 z-10 bg-primary-blue-100 rounded-full w-fit p-1"
                   >
                     <Image
-                      src={"/close.svg"}
+                      src={'/close.svg'}
                       alt="close modal"
                       width={20}
                       height={20}
@@ -57,7 +57,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                   <div className="flex-1 flex flex-col gap-3">
                     <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                       <Image
-                        src={"/hero.png"}
+                        src={'/hero.png'}
                         alt={`car image`}
                         fill
                         priority
@@ -67,7 +67,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={'/hero.png'}
                           alt={`car image`}
                           fill
                           priority
@@ -76,7 +76,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={'/hero.png'}
                           alt={`car image`}
                           fill
                           priority
@@ -85,7 +85,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src={"/hero.png"}
+                          src={'/hero.png'}
                           alt={`car image`}
                           fill
                           priority
@@ -105,8 +105,12 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           key={key}
                           className="flex justify-between gap-5 w-full text-right "
                         >
-                          <h4 className="text-gray capitalize">{key.split("_").join(" ")}</h4>
-                          <p className="text-black-100 font-semibold">{value}</p>
+                          <h4 className="text-gray capitalize">
+                            {key.split('_').join(' ')}
+                          </h4>
+                          <p className="text-black-100 font-semibold">
+                            {value}
+                          </p>
                         </div>
                       ))}
                     </div>

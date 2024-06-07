@@ -1,4 +1,4 @@
-import { FetchCarsParams } from "@/types";
+import { FetchCarsParams } from '@/types';
 
 export async function fetchCars({
   manufacturer,
@@ -8,8 +8,8 @@ export async function fetchCars({
   limit,
 }: FetchCarsParams) {
   const headers = {
-    "X-RapidAPI-Key": process.env.RAPID_API_KEY!,
-    "X-RapidAPI-Host": process.env.RAPID_API_HOST!,
+    'X-RapidAPI-Key': process.env.RAPID_API_KEY!,
+    'X-RapidAPI-Host': process.env.RAPID_API_HOST!,
   };
 
   const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&model=${model}&year=${year}&fuel_type=${fuel}&limit=${limit}`;

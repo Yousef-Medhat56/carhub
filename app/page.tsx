@@ -4,10 +4,10 @@ import {
   Hero,
   SearchBar,
   ShowMoreButton,
-} from "@/components";
-import { fuels, yearsOfProduction } from "@/constants";
-import { FetchCarsParams } from "@/types";
-import { fetchCars } from "@/utils";
+} from '@/components';
+import { fuels, yearsOfProduction } from '@/constants';
+import { FetchCarsParams } from '@/types';
+import { fetchCars } from '@/utils';
 
 export default async function Home({
   searchParams,
@@ -15,10 +15,10 @@ export default async function Home({
   searchParams: FetchCarsParams;
 }) {
   const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || "",
+    manufacturer: searchParams.manufacturer || '',
     year: searchParams.year || 2022,
-    model: searchParams.model || "",
-    fuel: searchParams.fuel || "",
+    model: searchParams.model || '',
+    fuel: searchParams.fuel || '',
     limit: searchParams.limit || 10,
   });
 

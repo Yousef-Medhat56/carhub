@@ -1,8 +1,8 @@
-"use client";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import SearchManufacturer from "../SearchManufacturer";
-import Image from "next/image";
+'use client';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import SearchManufacturer from '../SearchManufacturer';
+import Image from 'next/image';
 
 interface SearchButtonProps {
   styles?: string;
@@ -11,7 +11,7 @@ const SearchButton = ({ styles }: SearchButtonProps) => {
   return (
     <button type="submit" className={`-ml-3 z-10 ${styles}`}>
       <Image
-        src={"/magnifying-glass.svg"}
+        src={'/magnifying-glass.svg'}
         alt="search button"
         width={40}
         height={40}
@@ -21,26 +21,26 @@ const SearchButton = ({ styles }: SearchButtonProps) => {
   );
 };
 const SearchBar = () => {
-  const [manufacturer, setManufacturer] = useState<string | null>("");
-  const [model, setModel] = useState("");
+  const [manufacturer, setManufacturer] = useState<string | null>('');
+  const [model, setModel] = useState('');
   const router = useRouter();
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (manufacturer === "" && model === "") return;
+    if (manufacturer === '' && model === '') return;
 
     updateSearchParams(manufacturer?.toLowerCase()!, model.toLowerCase());
   };
 
   const updateSearchParams = (manufacturer: string, model: string) => {
     const searchParams = new URLSearchParams(window.location.search);
-    if (model) searchParams.set("model", model);
-    else searchParams.delete("model");
+    if (model) searchParams.set('model', model);
+    else searchParams.delete('model');
 
-    if (manufacturer) searchParams.set("manufacturer", manufacturer);
-    else searchParams.delete("manufacturer");
+    if (manufacturer) searchParams.set('manufacturer', manufacturer);
+    else searchParams.delete('manufacturer');
 
-    searchParams.delete("limit")
-    
+    searchParams.delete('limit');
+
     const newPathname = `${
       window.location.pathname
     }?${searchParams.toString()}#discover`;
@@ -59,7 +59,7 @@ const SearchBar = () => {
       </div>
       <div className="searchbar__item">
         <Image
-          src={"/model-icon.png"}
+          src={'/model-icon.png'}
           alt="car model"
           width={25}
           height={25}
