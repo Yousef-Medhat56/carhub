@@ -21,21 +21,13 @@ const CarCard = ({ car }: CarCardProps) => {
           {make} {model}
         </h2>
       </div>
-      <p className="flex mt-6 text-[32px] font-extrabold">
+      <p className="flex mt-6 mb-3 text-[32px] font-extrabold">
         <span className="self-start text-[14px] font-semibold">$</span>
         {carRent}
         <span className="self-end text-[14px] font-medium">/day</span>
       </p>
 
-      <div className="relative w-full h-40 my-3 object-contain">
-        <Image
-          src={'/hero.png'}
-          alt={`${make} ${model} image`}
-          fill
-          priority
-          className="object-contain"
-        />
-      </div>
+      
 
       <div className="relative flex mt-2 w-full">
         <div className="flex group-hover:invisible w-full justify-between text-gray">
